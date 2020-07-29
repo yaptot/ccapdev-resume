@@ -8,6 +8,10 @@ body {
     border: 1px solid black;
 }
 
+.col {
+    border: 1px solid black;
+}
+
 #name {
     text-align: left;
     padding: 30px; 

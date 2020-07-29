@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resume</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -29,15 +44,28 @@
         };
         // Initialize Firebase
         var defaultProject = firebase.initializeApp(firebaseConfig);
-
+        var info;
         var db = firebase.firestore();
 
         db.collection("organizations").get().then(function(snapshot) {
             snapshot.forEach(function(doc) {
                 console.table(doc.data());
-            });
+            })
         });
-        
+
+        db.collection("others").get().then(function(snapshot) {
+            snapshot.forEach(function(doc) {
+                console.log(doc.data().value);
+                if(doc.data().value != undefined)
+                    test.append(doc.data().value + " ");
+                
+            });
+
+            function getVal(doc) {
+                test.append(doc.data().value + " ");
+            }
+        })
+
         var newObject = {
             name: "Bahay ni Yap",
             position: "Member",
@@ -45,28 +73,56 @@
             year_end: 2020
         }
 
-       /* db.collection("organizations").add(newObject).then(function(doc) {
-            console.log("hello " + doc.id);
-        });*/
+        /* db.collection("organizations").add(newObject).then(function(doc) {
+             console.log("hello " + doc.id);
+         });*/
 
         /*db.collection("organizations").doc("l8oz4zephcNE4ynZhNmj").delete();*/
 
         var email = "courtney.ngo@dlsu.edu.ph";
         var password = "abcd1234";
- 
-        firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
+
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) {
             console.log("User signed in");
 
             var user = firebase.auth().currentUser;
             if (!!user)
                 console.log(user.email);
-        }).catch(function(err) {
-            if(err.code == "auth/wrong-password")
-                alert("wrong password")
+        }).catch(function (err) {
+            if (err.code == "auth/wrong-password")
+                alert("wrong password");
             else
                 alert(err.message);
         });
     </script>
+
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="container" id="name">
+                    <h2>RUPERT YAP</h2>
+                    <h4>118 | CCS</h4>
+                    <span id="test"></span>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row align-items-start">
+            <div class="col">
+                <h3>PORTFOLIO</h3>
+            </div>
+        </div>
+        <div class="row align-items-start">
+            <div class="col">
+                <h3>EDUCATION</h3>
+            </div>
+        </div>
+        <div class="row align-items-start">
+            <div class="col">
+                <h3>ORGANIZATIONS</h3>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

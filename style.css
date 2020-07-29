@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    background-color: #fdfdfd;
+}
+
+.row {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#name {
+    text-align: left;
+    padding: 30px; 
+    border: 2px solid black;
+}

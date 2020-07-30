@@ -1,0 +1,45 @@
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+  height: auto;
+  color: rgb(0,0,0);
+  background-color: rgba(234,234,234,0);
+  width: auto;
+  padding: 25px;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+#sidebar {
+}
+
+#sidebar {
+  width: 81px;
+  background-color: #6c0000;
+  margin-right: 0px;
+  height: 100%;
+  padding: 25px;
+}
+
+#page-top {
+  color: rgb(0,0,0);
+  background-color: rgb(252,252,252);
+  padding: 86px;
+}
+
+.profile {
+  height: auto;
+  color: rgb(0,0,0);
+  background-color: #fefefe;
+  width: auto;
+  padding: 25px;
+  box-shadow: 5px 5px 6px rgb(205,205,205);
+}
+
+.card.project {
+  height: 114px;
+  margin: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  width: 150px;
+  box-shadow: 2px 2px 4px rgb(205,205,205);
+}
+

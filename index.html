@@ -1,162 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
 </head>
 
-<body>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyBnC5pX951g73LsFa2gIDfKsJmPMerAO-Q",
-            authDomain: "resume-b6cfe.firebaseapp.com",
-            databaseURL: "https://resume-b6cfe.firebaseio.com",
-            projectId: "resume-b6cfe",
-            storageBucket: "resume-b6cfe.appspot.com",
-            messagingSenderId: "570089405876",
-            appId: "1:570089405876:web:49ece736e9567a73b186e1"
-        };
-        // Initialize Firebase
-        var defaultProject = firebase.initializeApp(firebaseConfig);
-        var info;
-        var db = firebase.firestore();
-
-        db.collection("organizations").get().then(function(snapshot) {
-            snapshot.forEach(function(doc) {
-                console.table(doc.data());
-            })
-        });
-
-        db.collection("others").get().then(function(snapshot) {
-            snapshot.forEach(function(doc) {
-                console.log(doc.data().value);
-                if(doc.data().value != undefined)
-                    test.append(doc.data().value + " ");
-                
-            });
-
-            function getVal(doc) {
-                test.append(doc.data().value + " ");
-            }
-        })
-
-        var newObject = {
-            name: "Bahay ni Yap",
-            position: "Member",
-            year_start: 2014,
-            year_end: 2020
-        }
-
-        /* db.collection("organizations").add(newObject).then(function(doc) {
-             console.log("hello " + doc.id);
-         });*/
-
-        /*db.collection("organizations").doc("l8oz4zephcNE4ynZhNmj").delete();*/
-
-        var email = "courtney.ngo@dlsu.edu.ph";
-        var password = "abcd1234";
-
-        firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) {
-            console.log("User signed in");
-
-            var user = firebase.auth().currentUser;
-            if (!!user)
-                console.log(user.email);
-        }).catch(function (err) {
-            if (err.code == "auth/wrong-password")
-                alert("wrong password");
-            else
-                alert(err.message);
-        });
-    </script>
-
-    <div class="container">
-        <div class="row align-items-start">
-            <div class="col">
-                <div class="container" id="name">
-                    <h2>RUPERT YAP</h2>
-                    <h4>118 | CCS</h4>
-                    <span id="test"></span>
+<body class="d-lg-flex flex-row justify-content-lg-center" id="page-top" style="color: rgb(0,0,0);background-color: rgb(252,252,252);padding: 86px;">
+    <div id="sidebar" style="width: 81px;background-color: #6c0000;margin-right: 0px;height: 100%;padding: 25px;"></div>
+    <div id="main">
+        <div class="container" style="height: auto;color: rgb(0,0,0);background-color: #fefefe;width: auto;padding: 25px;box-shadow: 5px 5px 6px rgb(205,205,205);">
+            <div id="details" style="height: 123px;padding: 27px;">
+                <h1>Rupert Myles B. Yap</h1><strong>118 CCS</strong><span class="d-block" id="info">info</span></div>
+        </div>
+        <div class="container" style="height: auto;color: rgb(0,0,0);background-color: rgba(234,234,234,0);width: auto;padding: 25px;margin: 0px;margin-top: 20px;">
+            <div id="portfolio">
+                <h2 class="text-center">Portfolio</h2>
+                <div class="d-lg-flex flex-row justify-content-between align-content-around flex-wrap portfolioCards">
+                    <div class="card project" style="height: 114px;margin: 10px;min-width: 300px;max-width: 300px;width: 150px;box-shadow: 2px 2px 4px rgb(205,205,205);">
+                        <div class="card-header">
+                            <h5 class="mb-0">mp1</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">info</p>
+                        </div>
+                    </div>
+                    <div class="card project" style="height: 114px;margin: 10px;min-width: 300px;max-width: 300px;">
+                        <div class="card-header">
+                            <h5 class="mb-0">mp2</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">info</p>
+                        </div>
+                    </div>
+                    <div class="card project" style="height: 114px;margin: 10px;">
+                        <div class="card-header" style="min-width: 300px;max-width: 300px;">
+                            <h5 class="mb-0">mp3</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">info</p>
+                        </div>
+                    </div>
+                    <div class="card project" style="height: 114px;margin: 10px;">
+                        <div class="card-header" style="min-width: 300px;max-width: 300px;">
+                            <h5 class="mb-0">mp4</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">info</p>
+                        </div>
+                    </div>
+                    <div class="card project" style="height: 114px;margin: 10px;">
+                        <div class="card-header" style="min-width: 300px;max-width: 300px;">
+                            <h5 class="mb-0">mp5</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">info</p>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h3>PORTFOLIO</h3>
-            </div>
+        <div class="container" style="height: auto;color: rgb(0,0,0);background-color: #eaeaea;width: auto;padding: 25px;margin: 0px;margin-top: 20px;box-shadow: 5px 5px 6px rgb(205,205,205);">
+            <div id="education" style="height: 123px;padding: 27px;margin: 0px;margin-top: 0px;">
+                <h2 class="text-center">Education</h2><span>education</span></div>
         </div>
-        <div class="row justify-content-between">
-            <div class="col-2">
-                mp1
-            </div>
-            <div class="col-2">
-                mp2
-            </div>
-            <div class="col-2">
-                mp3
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col-2">
-                mp4
-            </div>
-            <div class="col-2">
-                mp5
-            </div>
-        </div>
-        <div class="row align-items-start">
-            <div class="col">
-                <h3>EDUCATION</h3>
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col-4">
-                gs
-            </div>
-            <div class="col-4">
-                jhs
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                shs
-            </div>
-            <div class="col">
-                college
-            </div>
-        </div>
-        <div class="row align-items-start">
-            <div class="col">
-                <h3>ORGANIZATIONS</h3>
-            </div>
+        <div class="container" style="height: auto;color: rgb(0,0,0);background-color: #eaeaea;width: auto;padding: 25px;margin: 0px;margin-top: 20px;box-shadow: 5px 5px 6px rgb(205,205,205);">
+            <div id="organizations" style="height: 123px;padding: 27px;">
+                <h2 class="text-center">Organizations</h2><span>organizations</span></div>
         </div>
     </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/freelancer.js"></script>
 </body>
+
 </html>

@@ -12,6 +12,15 @@ body {
     border: 1px solid black;
 }
 
+.col-4 {
+    border: 1px solid black;
+}
+
+.col-2 {
+    border: 1px solid black;
+    margin: 5px;
+}
+
 #name {
     text-align: left;
     padding: 30px; 

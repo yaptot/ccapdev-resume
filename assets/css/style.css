@@ -10,8 +10,9 @@
 
 #page-top {
   color: rgb(0,0,0);
-  background-color: rgb(252,252,252);
+  background-color: #efefef;
   padding: 86px;
+  border-radius: 0px;
 }
 
 .profile {
@@ -24,12 +25,15 @@
 }
 
 .card.project {
-  height: 114px;
   margin: 10px;
   min-width: 300px;
   max-width: 300px;
   width: 150px;
-  box-shadow: 2px 2px 4px rgb(205,205,205);
+  box-shadow: 2px 2px 5px rgb(170,170,170);
+  border-radius: 0px;
+  border-width: 0px;
+  border-left-width: 5px;
+  border-left-color: #0a9c42;
 }
 
 #sidebar {
@@ -58,12 +62,24 @@
   background-color: #e99b1f;
 }
 
-.card.project {
+.card.orgs {
   border-radius: 0px;
   height: auto;
   border-width: 0px;
   border-style: none;
   border-left: 5px solid #0A9C42;
+  margin: 10px;
+  min-width: 300px;
+  width: 150px;
+  box-shadow: 2px 2px 5px rgb(170,170,170);
+}
+
+.card.orgs {
+  border-radius: 0px;
+  height: auto;
+  border-width: 0px;
+  border-style: none;
+  border-left: 5px solid #E99B1F;
 }
 
 .card-header:first-child {
@@ -94,5 +110,15 @@
   border-radius: 50%;
   margin-bottom: 30px;
   padding: 12px;
+}
+
+#details {
+  height: 123px;
+  padding: 27px;
+}
+
+.container.profile {
+  box-shadow: 2px 2px 5px rgb(170,170,170);
+  border-left: 5px solid #0078cf;
 }
 

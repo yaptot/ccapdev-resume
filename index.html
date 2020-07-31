@@ -12,63 +12,68 @@
 </head>
 
 <body class="d-lg-flex flex-row justify-content-center" id="page-top">
-    <div id="sidebar"></div>
+    <div class="flex-column" id="sidebar">
+        <div id="home" class="sidebar-button"><img src="assets/img/home.svg" width="50px" height="50px"></div>
+        <div id="portfolio" class="sidebar-button"><img src="assets/img/portfolio.svg" width="50px" height="50px"></div>
+        <div id="education" class="sidebar-button"><img src="assets/img/school.svg" width="50px" height="50px"></div>
+        <div id="organizations" class="sidebar-button"><img src="assets/img/organiztions.svg" width="50px" height="50px"></div>
+    </div>
     <div class="d-lg-flex flex-column justify-content-lg-center" id="main">
-        <div class="container profile">
+        <div class="container profile" style="box-shadow: 2px 2px 5px rgb(205,205,205);border-left: 5px solid #0078cf ;">
             <div id="details" style="height: 123px;padding: 27px;">
                 <h1>Rupert Myles B. Yap</h1><strong>118 CCS</strong><span class="d-block" id="info">info</span></div>
         </div>
         <div class="container">
-            <div id="portfolio">
+            <div id="portfolioMain">
                 <h2 class="text-center">Portfolio</h2>
                 <div class="d-lg-flex flex-row justify-content-around align-content-around flex-wrap portfolioCards">
-                    <div class="card project" style="border-radius: 0px;height: auto;border-width: 0px;border-style: none;border-left: 5px solid #0078cf ;">
-                        <div class="card-header" style="background-color: rgba(0,0,0,0);border-style: none;">
+                    <div class="card project">
+                        <div class="card-header">
                             <h5 class="mb-0">name</h5>
                         </div>
-                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
+                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span></div>
                     </div>
-                    <div class="card project" style="border-radius: 0px;height: auto;border-width: 0px;border-style: none;border-left: 5px solid #0078cf ;">
-                        <div class="card-header" style="background-color: rgba(0,0,0,0);border-style: none;">
+                    <div class="card project">
+                        <div class="card-header">
                             <h5 class="mb-0">name</h5>
                         </div>
-                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
+                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
                     </div>
-                    <div class="card project" style="border-radius: 0px;height: auto;border-width: 0px;border-style: none;border-left: 5px solid #0078cf ;">
-                        <div class="card-header" style="background-color: rgba(0,0,0,0);border-style: none;">
+                    <div class="card project">
+                        <div class="card-header">
                             <h5 class="mb-0">name</h5>
                         </div>
-                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
+                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
                     </div>
-                    <div class="card project" style="border-radius: 0px;height: auto;border-width: 0px;border-style: none;border-left: 5px solid #0078cf ;">
-                        <div class="card-header" style="background-color: rgba(0,0,0,0);border-style: none;">
+                    <div class="card project">
+                        <div class="card-header">
                             <h5 class="mb-0">name</h5>
                         </div>
-                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
+                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
                     </div>
-                    <div class="card project" style="border-radius: 0px;height: auto;border-width: 0px;border-style: none;border-left: 5px solid #0078cf ;">
-                        <div class="card-header" style="background-color: rgba(0,0,0,0);border-style: none;">
+                    <div class="card project">
+                        <div class="card-header">
                             <h5 class="mb-0">name</h5>
                         </div>
-                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
+                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container align-self-center educ" style="background-color: #fefefe;box-shadow: 5px 5px 6px rgb(205,205,205);padding: 25px;max-width: 856px;width: auto;min-width: 739.125px;">
-            <div id="education">
+        <div class="container align-self-center educ" style="background-color: rgba(254,254,254,0);padding: 25px;max-width: 856px;width: auto;min-width: 739.125px;height: auto;">
+            <div id="educationDiv">
                 <h2 class="text-center">Education</h2>
                 <div class="d-lg-flex flex-column align-items-lg-center educationCards" style="padding: 0px;">
-                    <div class="card align-self-start project" style="border-width: 0px;border-right: 5px solid rgb(0,0,0);border-radius: 0px;">
-                        <div class="card-header" style="background-color: rgba(0,0,0,0);border-width: 0px;">
+                    <div class="card align-self-start project">
+                        <div class="card-header">
                             <h5 class="mb-0">gs</h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">info</p>
                         </div>
                     </div>
-                    <div class="card align-self-end project" style="border-radius: 0px;border-width: 0px;border-left-width: 5px;border-left-color: #FACD55;">
-                        <div class="card-header" style="background-color: rgba(0,0,0,0);border-width: 0px;">
+                    <div class="card align-self-end project">
+                        <div class="card-header">
                             <h5 class="mb-0">JHS</h5>
                         </div>
                         <div class="card-body">
@@ -77,7 +82,7 @@
                     </div>
                     <div class="card align-self-start project">
                         <div class="card-header">
-                            <h5 class="mb-0">shs</h5>
+                            <h5 class="mb-0">gs</h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">info</p>

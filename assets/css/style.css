@@ -67,19 +67,11 @@
   height: auto;
   border-width: 0px;
   border-style: none;
-  border-left: 5px solid #0A9C42;
+  border-left: 5px solid #E99B1F;
   margin: 10px;
   min-width: 300px;
   width: 150px;
   box-shadow: 2px 2px 5px rgb(170,170,170);
-}
-
-.card.orgs {
-  border-radius: 0px;
-  height: auto;
-  border-width: 0px;
-  border-style: none;
-  border-left: 5px solid #E99B1F;
 }
 
 .card-header:first-child {
@@ -120,5 +112,11 @@
 .container.profile {
   box-shadow: 2px 2px 5px rgb(170,170,170);
   border-left: 5px solid #0078cf;
+}
+
+.course {
+  color: grey;
+  font-weight: 400;
+  font-size: 13px;
 }
 

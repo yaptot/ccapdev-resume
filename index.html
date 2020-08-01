@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Resume</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
@@ -12,114 +12,49 @@
 </head>
 
 <body class="d-lg-flex flex-row justify-content-center" id="page-top">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="assets/js/script.js"></script>
+
     <div class="flex-column" id="sidebar">
         <div id="home" class="sidebar-button"><img src="assets/img/home.svg" width="50px" height="50px"></div>
         <div id="portfolio" class="sidebar-button"><img src="assets/img/portfolio.svg" width="50px" height="50px"></div>
         <div id="education" class="sidebar-button"><img src="assets/img/school.svg" width="50px" height="50px"></div>
-        <div id="organizations" class="sidebar-button"><img src="assets/img/organiztions.svg" width="50px" height="50px"></div>
+        <div id="organizations" class="sidebar-button"><img src="assets/img/organiztions.svg" width="50px"
+                height="50px"></div>
     </div>
     <div class="d-lg-flex flex-column justify-content-lg-center" id="main">
         <div class="container profile">
             <div id="details">
-                <h1>Rupert Myles B. Yap</h1><strong>118 CCS</strong><span class="d-block" id="info">info</span></div><img src="assets/img/github.svg" width="50px" height="50px"></div>
+                <h1>Rupert Myles B. Yap</h1><strong>118 CCS</strong><span class="d-block" id="info">info</span>
+            </div><img src="assets/img/github.svg" width="50px" height="50px">
+        </div>
         <div class="container">
             <div id="portfolioMain-1">
                 <h2 class="text-center">Portfolio</h2>
-                <div class="d-lg-flex flex-row justify-content-around align-content-around flex-wrap portfolioCards">
-                    <div class="card project">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span></div>
-                    </div>
-                    <div class="card project">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
-                    </div>
-                    <div class="card project">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
-                    </div>
-                    <div class="card project">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
-                    </div>
-                    <div class="card project">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
-                    </div>
+                <div id="portfolioCards" class="d-lg-flex flex-row justify-content-around align-content-around flex-wrap portfolioCards">
                 </div>
             </div>
         </div>
-        <div class="container align-self-center educ" style="background-color: rgba(254,254,254,0);padding: 25px;max-width: 856px;width: auto;min-width: 739.125px;height: auto;">
+        <div class="container align-self-center educ"
+            style="background-color: rgba(254,254,254,0);padding: 25px;max-width: 856px;width: auto;min-width: 739.125px;height: auto;">
             <div id="educationDiv">
                 <h2 class="text-center">Education</h2>
-                <div class="d-lg-flex flex-column align-items-lg-center educationCards" style="padding: 0px;">
-                    <div class="card align-self-start project">
-                        <div class="card-header">
-                            <h5 class="mb-0">gs</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">info</p>
-                        </div>
-                    </div>
-                    <div class="card align-self-end project">
-                        <div class="card-header">
-                            <h5 class="mb-0">JHS</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">info</p>
-                        </div>
-                    </div>
-                    <div class="card align-self-start project">
-                        <div class="card-header">
-                            <h5 class="mb-0">gs</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">info</p>
-                        </div>
-                    </div>
-                    <div class="card align-self-end project">
-                        <div class="card-header">
-                            <h5 class="mb-0">college</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">info</p>
-                        </div>
-                    </div>
+                <div id="educCards" class="d-lg-flex flex-column align-items-lg-center educationCards" style="padding: 0px;">
+                    
                 </div>
             </div>
         </div>
         <div class="container">
             <div id="orgsMain">
                 <h2 class="text-center">Organizations</h2>
-                <div class="d-lg-flex flex-row justify-content-around align-content-around flex-wrap">
-                    <div class="card orgs">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body" style="height: auto;"><span>course</span><span class="d-block">link</span></div>
-                    </div>
-                    <div class="card orgs">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
-                    </div>
-                    <div class="card orgs">
-                        <div class="card-header">
-                            <h5 class="mb-0">name</h5>
-                        </div>
-                        <div class="card-body"><span>course</span><span class="d-block">link</span><span class="d-block"></span></div>
-                    </div>
+                <div id="orgsDiv" class="d-lg-flex flex-row justify-content-around align-content-around flex-wrap">
+                
                 </div>
             </div>
         </div>

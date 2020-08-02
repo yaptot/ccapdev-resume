@@ -7,7 +7,6 @@ html {
   color: rgb(0,0,0);
   background-color: rgba(234,234,234,0);
   width: auto;
-  padding: 25px;
   margin: 0px;
   margin-top: 20px;
 }
@@ -85,6 +84,10 @@ html {
 
 #organizations {
   background-color: #e99b1f;
+}
+
+#portfolioMain-1, .educ, #orgsCon{
+  margin-top: 75px;;
 }
 
 .card.orgs {
@@ -236,14 +239,14 @@ html {
   padding: 10px;
 }
 
-h2.left {
+h1.left {
   margin-right: 150px;
   padding-top: 75px;
   text-align: center;
   color: #ca2828;
 }
 
-h2.right {
+h1.right {
   margin-left: 150px;
   padding-top: 75px;
   text-align: center;

@@ -120,7 +120,7 @@ function readEduc(doc, i) {
     let card = document.createElement("div");
     card.classList.add("card");
 
-    let num = document.createElement("h2");
+    let num = document.createElement("h1");
     num.textContent = i;
 
     card.classList.add("educ");

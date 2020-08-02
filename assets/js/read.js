@@ -114,24 +114,16 @@ db.collection("projects").get().then(function(snapshot) {
 function readEduc(doc, i) {
     let mainDiv = document.getElementById("educCards");
 
+    let row = document.createElement("div");
+    row.classList.add("educRow");
+
     let card = document.createElement("div");
     card.classList.add("card");
 
-    let num = document.createElement("span");
+    let num = document.createElement("h2");
     num.textContent = i;
 
-    if(i % 2) {
-        card.classList.add("align-self-start");
-        num.classList.add("align-self-end");
-    }
-               
-    else {
-        card.classList.add("align-self-end"); 
-        num.classList.add("align-self-start");
-    }
-        
-
-    card.classList.add("project");
+    card.classList.add("educ");
 
     let cardHeader = document.createElement("div");
     cardHeader.classList.add("card-header");
@@ -150,8 +142,20 @@ function readEduc(doc, i) {
     let years = document.createElement("span");
     years.textContent = doc.data().year_start + " - " + doc.data().year_end;
 
-    mainDiv.appendChild(card);
-    mainDiv.appendChild(num);
+    mainDiv.appendChild(row);
+
+    if(i % 2) {
+        num.classList.add("left");
+        row.appendChild(num);
+        row.appendChild(card);
+    }
+
+    else {
+        num.classList.add("right");
+        row.appendChild(card);
+        row.appendChild(num);
+    }
+    
 
     card.appendChild(cardHeader);
     cardHeader.appendChild(name);

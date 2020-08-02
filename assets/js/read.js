@@ -13,6 +13,53 @@ var defaultProject = firebase.initializeApp(firebaseConfig);
 var info;
 var db = firebase.firestore();
 
+function readProfile(doc) {
+     let mainDiv = document.getElementById("details");
+
+     let intro = document.createElement("p");
+     intro.textContent = doc.data().value;
+
+     let birthday = document.createElement("span");
+     birthday.textContent = "Birthday: " + doc.data().birthday;
+
+     let email = document.createElement("span");
+     email.textContent = "email: " + doc.data().email;
+
+     let githubAnchor = document.createElement("a");
+     githubAnchor.href = doc.data().github;
+
+     let github = document.createElement("img");
+     github.classList.add("contact");
+     github.src = "assets/img/github.svg";
+     github.height = 40;
+     github.width = 40;
+
+     let fbAnchor = document.createElement("a");
+     fbAnchor.href = doc.data().facebook;
+
+     let fb = document.createElement("img");
+     fb.classList.add("contact");
+     fb.src = "assets/img/facebook.svg";
+     fb.height = 40;
+     fb.width = 40;
+
+     mainDiv.appendChild(intro);
+     mainDiv.appendChild(birthday);
+     mainDiv.appendChild(email);
+
+     mainDiv.appendChild(githubAnchor);
+     githubAnchor.appendChild(github);
+
+     mainDiv.appendChild(fbAnchor);
+     fbAnchor.appendChild(fb);
+}
+
+db.collection("others").get().then(function(snapshot) {
+    snapshot.forEach(function(doc) {
+       readProfile(doc);
+    });
+});
+
 function readProject(doc) {
     let mainDiv = document.getElementById("portfolioCards");
 
@@ -37,10 +84,15 @@ function readProject(doc) {
     let info = document.createElement("span");
     info.textContent = doc.data().info;
     
-    let link = document.createElement("span");
-    link.classList.add("d-block");
-    link.textContent = doc.data().link;
-
+    let link = document.createElement("button");
+    link.classList.add("btn");
+    link.classList.add("btn-primary");
+    link.classList.add("btn-portfolio");
+    link.textContent = "Download here!";
+    
+    link.onclick = function() {
+        window.open(doc.data().link);
+    }
     mainDiv.appendChild(card);
 
     card.appendChild(cardHeader);
@@ -50,6 +102,7 @@ function readProject(doc) {
     card.appendChild(cardBody);
     cardBody.appendChild(info);
     cardBody.appendChild(link);
+
 }
 
 db.collection("projects").get().then(function(snapshot) {
@@ -63,10 +116,20 @@ function readEduc(doc, i) {
 
     let card = document.createElement("div");
     card.classList.add("card");
-    if(i % 2)
+
+    let num = document.createElement("span");
+    num.textContent = i;
+
+    if(i % 2) {
         card.classList.add("align-self-start");
-    else
-        card.classList.add("align-self-end");
+        num.classList.add("align-self-end");
+    }
+               
+    else {
+        card.classList.add("align-self-end"); 
+        num.classList.add("align-self-start");
+    }
+        
 
     card.classList.add("project");
 
@@ -81,22 +144,24 @@ function readEduc(doc, i) {
     cardBody.classList.add("card-body");
 
     let degree = document.createElement("span");
+    degree.classList.add("degree")
     degree.textContent = doc.data().degree;
 
     let years = document.createElement("span");
     years.textContent = doc.data().year_start + " - " + doc.data().year_end;
 
     mainDiv.appendChild(card);
+    mainDiv.appendChild(num);
 
     card.appendChild(cardHeader);
     cardHeader.appendChild(name);
+    cardHeader.appendChild(degree);
 
     card.appendChild(cardBody);
-    cardBody.appendChild(degree);
     cardBody.appendChild(years);
 }
 
-db.collection("education").get().then(function(snapshot) {
+db.collection("education").orderBy("year_start").get().then(function(snapshot) {
     let i = 1;
     snapshot.forEach(function(doc) {
         readEduc(doc, i);
@@ -118,11 +183,12 @@ function readOrgs(doc) {
     name.classList.add("mb-0");
     name.textContent = doc.data().name;
 
+    let orgPos = document.createElement("span");
+    orgPos.classList.add("position");
+    orgPos.textContent = doc.data().position;
+
     let cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
-
-    let orgPos = document.createElement("span");
-    orgPos.textContent = doc.data().position;
 
     let years = document.createElement("span");
     years.textContent = doc.data().year_start + " - " + doc.data().year_end;
@@ -131,13 +197,14 @@ function readOrgs(doc) {
 
     card.appendChild(cardHeader);
     cardHeader.appendChild(name);
+    cardHeader.appendChild(orgPos);
 
     card.appendChild(cardBody);
-    cardBody.appendChild(orgPos);
+    
     cardBody.appendChild(years);
 }
 
-db.collection("organizations").get().then(function(snapshot) {
+db.collection("organizations").orderBy("year_start").get().then(function(snapshot) {
     snapshot.forEach(function(doc) {
         readOrgs(doc);
     });

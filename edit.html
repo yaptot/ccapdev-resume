@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Resume</title>
+    <title>Login</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login-style.css">
 </head>
 
-<body class="d-lg-flex flex-row justify-content-center" id="page-top">
+<body class="d-lg-flex flex-row justify-content-center" id="page-top" >
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
@@ -20,6 +20,17 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
     <script src="assets/js/read.js"></script>
+    <script src="assets/js/login.js"></script>
+
+    <div id="login-div">
+        <img src="assets/img/login.svg" height="50px" width="50px">
+        <h2>Login</h2>
+        <form class="login-info">
+            <input type="email" id="email" placeholder="email"><br>
+            <input type="password" id="password" placeholder="password">
+            <button type="button" id="submit" onclick="login()" class="btn btn-primary">Login</button>
+        </form>
+    </div>
 
     <div class="flex-column" id="sidebar">
         <a href="#page-top"><div id="home" class="sidebar-button"><img src="assets/img/home.svg" width="50px" height="50px"></div></a>
@@ -32,7 +43,6 @@
         <div id="profile" class="container profile">
             <div id="details">
                 <h1>Rupert Myles B. Yap</h1>
-           
             </div>
 
             <div id="profpic">
@@ -106,6 +116,7 @@
             </div>
         </div>
     </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

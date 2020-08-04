@@ -72,18 +72,42 @@ html {
 
 #home {
   background-color: #0078cf;
+  transition: 0.25s ease-in;
+}
+
+#home:hover {
+  background-color: #0a588f;
+  transition: 0.25s ease-in;
 }
 
 #portfolio {
   background-color: #0A9C42;
+  transition: 0.25s ease-in;
+}
+
+#portfolio:hover {
+  background-color: #075525;
+  transition: 0.25s ease-in;
 }
 
 #education {
   background-color: #ca2828;
+  transition: 0.25s ease-in;
+}
+
+#education:hover {
+  background-color: #861919;
+  transition: 0.25s ease-in;
 }
 
 #organizations {
   background-color: #e99b1f;
+  transition: 0.5s ease-in;
+}
+
+#organizations:hover {
+  background-color: #a87625;
+  transition: 0.25s ease-in;
 }
 
 #portfolioMain-1, .educ, #orgsCon{
@@ -130,11 +154,6 @@ html {
   border-radius: 50%;
   margin-bottom: 30px;
   padding: 13px;
-}
-
-.sidebar-button:hover {
-  opacity: 0.75;
-  transition: opacity .5s ease-out;
 }
 
 #details {

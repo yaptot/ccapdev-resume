@@ -1,70 +1,142 @@
-#login-div { 
-    box-shadow: 2px 2px 5px rgb(170,170,170);
-    height: 500px;
-    width: 500px;
-    border-left: 15px solid #8538d2;
-    background-color: #fefefe;
+#login-div {
+  box-shadow: 2px 2px 5px rgb(170, 170, 170);
+  height: 500px;
+  width: 500px;
+  border-left: 15px solid #8538d2;
+  background-color: #fefefe;
 }
 
 #login-div h2 {
-    padding-top: 5px;
-    color: #8538d2;
-    text-align: center;
-    font-size: 45px;
-}
-
-#login-div img {
-    margin-top: 40px;
-    margin-left: 210px;
-}
-
-.login-info {
-    padding: 30px;
-}
-
-input {
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    border: 0px;
-    border-left: 3px solid #8538d2;
-    background-color: #efefef;
-}
-
-#submit {
-    background-color: #8538d2;
-    border: 0px;
-    margin: 20px auto;
-    display: block;
-    height: 50px;
-    width: 100px;
-    font-size: 18px;
+  padding-top: 5px;
+  color: #8538d2;
+  text-align: center;
+  font-size: 45px;
 }
 
 #submit:hover {
-    background-color: #5b1c9b;
+  background-color: #5b1c9b;
+}
+
+#login-div img {
+  margin-top: 40px;
+  margin-left: 210px;
+}
+
+#login-info {
+  padding: 30px;
+}
+
+#login-info input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: 0px;
+  border-left: 3px solid #8538d2;
+  background-color: #efefef;
+}
+
+#submit {
+  background-color: #8538d2;
+  border: 0px;
+  margin: 20px auto;
+  display: block;
+  height: 50px;
+  width: 100px;
+  font-size: 18px;
+}
+
+#add-project input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: 0px;
+  border-left: 3px solid #0a9c42;
+  background-color: #efefef;
+}
+
+#project-btn-add {
+  background-color: #0a9c42;
+  border: 0px;
+  margin: 20px auto;
+  display: block;
+  height: 50px;
+  width: 100px;
+  font-size: 18px;
+}
+
+#project-btn-add:hover {
+  background-color: #075525;
+}
+
+#add-school input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: 0px;
+  border-left: 3px solid #ca2828;
+  background-color: #efefef;
+}
+
+#school-btn-add {
+  background-color: #ca2828;
+  border: 0px;
+  margin: 20px auto;
+  display: block;
+  height: 50px;
+  width: 100px;
+  font-size: 18px;
+}
+
+#school-btn-add:hover {
+  background-color: #861919;
+}
+
+#add-org input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: 0px;
+  border-left: 3px solid #e99b1f;
+  background-color: #efefef;
+}
+
+#org-btn-add {
+  background-color: #e99b1f;
+  border: 0px;
+  margin: 20px auto;
+  display: block;
+  height: 50px;
+  width: 100px;
+  font-size: 18px;
+}
+
+#org-btn-add:hover {
+  background-color: #a87625;
 }
 
 #main {
-    display: none;
-    display: none;
+  display: none;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.container, .container-lg, .container-md, .container-sm, .container-xl {
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
   height: auto;
-  color: rgb(0,0,0);
-  background-color: rgba(234,234,234,0);
+  color: rgb(0, 0, 0);
+  background-color: rgba(234, 234, 234, 0);
   width: auto;
   margin: 0px;
   margin-top: 20px;
 }
 
 #page-top {
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   background-color: #efefef;
   padding: 86px;
   border-radius: 0px;
@@ -73,19 +145,19 @@ html {
 .profile {
   display: flex;
   flex-direction: row;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
   background-color: #fefefe;
   width: auto;
   padding: 25px;
   padding-bottom: 10px;
 }
 
-#profpic { 
+#profpic {
   padding: 27px;
 }
 
 #profpic img {
-  box-shadow: 2px 2px 5px rgb(170,170,170);
+  box-shadow: 2px 2px 5px rgb(170, 170, 170);
 }
 
 .card.project {
@@ -93,7 +165,7 @@ html {
   min-width: 300px;
   max-width: 300px;
   width: 150px;
-  box-shadow: 2px 2px 5px rgb(170,170,170);
+  box-shadow: 2px 2px 5px rgb(170, 170, 170);
   border-radius: 0px;
   border-width: 0px;
   border-left-width: 5px;
@@ -105,7 +177,7 @@ html {
   min-width: 300px;
   max-width: 300px;
   width: 150px;
-  box-shadow: 2px 2px 5px rgb(170,170,170);
+  box-shadow: 2px 2px 5px rgb(170, 170, 170);
   border-radius: 0px;
   border-width: 0px;
   border-left-width: 5px;
@@ -113,7 +185,7 @@ html {
 }
 
 #sidebar {
-  background-color: rgba(108,0,0,0);
+  background-color: rgba(108, 0, 0, 0);
   width: 120px;
   position: sticky;
   max-height: 300px;
@@ -125,22 +197,53 @@ html {
 
 #home {
   background-color: #0078cf;
+  transition: 0.25s ease-in;
+}
+
+#home:hover {
+  background-color: #0a588f;
+  transition: 0.25s ease-in;
 }
 
 #portfolio {
   background-color: #0A9C42;
+  transition: 0.25s ease-in;
+}
+
+#portfolio:hover {
+  background-color: #075525;
+  transition: 0.25s ease-in;
 }
 
 #education {
   background-color: #ca2828;
+  transition: 0.25s ease-in;
+}
+
+#education:hover {
+  background-color: #861919;
+  transition: 0.25s ease-in;
 }
 
 #organizations {
   background-color: #e99b1f;
+  transition: 0.25s ease-in;
 }
 
-#portfolioMain-1, .educ, #orgsCon{
-  margin-top: 75px;;
+#organizations:hover {
+  background-color: #a87625;
+  transition: 0.25s ease-in;
+}
+
+
+#portfolioMain-1,
+.educ,
+#orgsCon {
+  margin-top: 75px;
+}
+
+#portfolioMain-1 h5 {
+  color: #0A9C42;
 }
 
 .card.orgs {
@@ -152,11 +255,11 @@ html {
   margin: 10px;
   min-width: 300px;
   width: 150px;
-  box-shadow: 2px 2px 5px rgb(170,170,170);
+  box-shadow: 2px 2px 5px rgb(170, 170, 170);
 }
 
 .card-header:first-child {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border-style: none;
 }
 
@@ -185,11 +288,6 @@ html {
   padding: 13px;
 }
 
-.sidebar-button:hover {
-  opacity: 0.75;
-  transition: opacity .5s ease-out;
-}
-
 #details {
   height: auto;
   padding: 27px;
@@ -197,18 +295,16 @@ html {
 }
 
 .container.profile {
-  box-shadow: 2px 2px 5px rgb(170,170,170);
+  box-shadow: 2px 2px 5px rgb(170, 170, 170);
   border-left: 5px solid #0078cf;
 }
 
-.course, .degree, .position {
+.course,
+.degree,
+.position {
   color: grey;
   font-weight: 400;
   font-size: 15px !important;
-}
-
-#portfolioCards h5 {
-  color: #0A9C42;
 }
 
 
@@ -225,14 +321,15 @@ html {
   border: 0px;
   display: block;
   margin: 20px auto;
-  
+
 }
 
 .btn-portfolio:hover {
   background-color: #075525;
 }
 
-#educCards span, #orgsMain span {
+#educCards span,
+#orgsMain span {
   font-size: 18px;
 }
 
@@ -245,7 +342,8 @@ html {
   font-size: 20px;
 }
 
-#details h1, #skillsContent h2 {
+#details h1,
+#skillsContent h2 {
   color: #0078cf;
 }
 
@@ -257,7 +355,7 @@ html {
 
 .contact:hover {
   opacity: 0.5;
-  transition: opacity .5s ease-out;
+  transition: opacity .5s ease-in;
 }
 
 #skillsContent {
@@ -304,4 +402,14 @@ h1.right {
   padding-top: 75px;
   text-align: center;
   color: #ca2828;
+}
+
+.addButton {
+  display: block;
+  float: right;
+}
+
+.newItem {
+  display: block;
+  float: right;
 }

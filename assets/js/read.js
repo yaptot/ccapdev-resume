@@ -119,11 +119,10 @@ function readEduc(doc, i) {
 
     let card = document.createElement("div");
     card.classList.add("card");
+    card.classList.add("educ");
 
     let num = document.createElement("h1");
     num.textContent = i;
-
-    card.classList.add("educ");
 
     let cardHeader = document.createElement("div");
     cardHeader.classList.add("card-header");

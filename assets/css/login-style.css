@@ -409,7 +409,11 @@ h1.right {
   float: right;
 }
 
+.addButton:hover {
+  cursor: pointer;
+}
+
 .newItem {
-  display: block;
+  display: none;
   float: right;
 }

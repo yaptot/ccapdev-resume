@@ -66,6 +66,7 @@ function readProject(doc) {
     let card = document.createElement("div");
     card.classList.add("card");
     card.classList.add("project");
+    card.setAttribute('data-id', doc.id);
 
     let cardHeader = document.createElement("div");
     cardHeader.classList.add("card-header");
@@ -120,6 +121,7 @@ function readEduc(doc, i) {
     let card = document.createElement("div");
     card.classList.add("card");
     card.classList.add("educ");
+    card.setAttribute('data-id', doc.id);
 
     let num = document.createElement("h1");
     num.textContent = i;
@@ -178,6 +180,7 @@ function readOrgs(doc) {
     let card = document.createElement("div");
     card.classList.add("card");
     card.classList.add("orgs");
+    card.setAttribute('data-id', doc.id);
 
     let cardHeader = document.createElement("div");
     cardHeader.classList.add("card-header");

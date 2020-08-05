@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
     <link rel="stylesheet" href="assets/css/login-style.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 </head>
 
 <body class="d-lg-flex flex-row justify-content-center" id="page-top">
@@ -111,8 +114,8 @@
                 <div id="portfolioCards"
                     class="d-lg-flex flex-row justify-content-around align-content-around flex-wrap portfolioCards">
                 </div>
-                <div class="addButton"><img src="assets/img/add-portfolio.svg" height="50px" width="50px"></div>
-                <div class="card project newItem">
+                <div class="addButton" id="plus-project"><img src="assets/img/add-portfolio.svg" height="50px" width="50px"></div>
+                <div class="card project newItem" id="add-project-card">
                     <div class="card-header">
                         <h5>Add Project</h5>
                     </div>
@@ -120,10 +123,11 @@
                         <form id="add-project">
                             <input type="text" id="projectName" placeholder="Name"><br>
                             <input type="text" id="course" placeholder="Course"><br>
-                            <input type="number" id="year_start" placeholder="Start Year"><br>
-                            <input type="number" id="year_end" placeholder="End Year">
+                            <input type="text" id="info" placeholder="Info"><br>
+                            <input type="number" id="projStart" placeholder="Start Year"><br>
+                            <input type="number" id="projEnd" placeholder="End Year">
                             <input type="text" id="url" placeholder="url"><br>
-                            <button type="button" id="project-btn-add" onclick="" class="btn btn-primary">Add</button>
+                            <button type="submit" id="project-btn-add" class="btn btn-primary">Add</button>
                         </form>
                     </div>
                 </div>
@@ -136,8 +140,8 @@
                 <div id="educCards" class="d-lg-flex flex-column educationCards" style="padding: 0px;">
 
                 </div>
-                <div class="addButton"><img src="assets/img/add-educ.svg" height="50px" width="50px"></div>
-                <div class="card educ newItem">
+                <div class="addButton" id="plus-school"><img src="assets/img/add-educ.svg" height="50px" width="50px"></div>
+                <div class="card educ newItem" id="add-school-card">
                     <div class="card-header">
                         <h5>Add School</h5>
                     </div>
@@ -145,9 +149,9 @@
                         <form id="add-school">
                             <input type="text" id="schoolName" placeholder="Name"><br>
                             <input type="text" id="degree" placeholder="Degree"><br>
-                            <input type="number" id="year_start" placeholder="Start Year"><br>
-                            <input type="number" id="year_end" placeholder="End Year">
-                            <button type="button" id="school-btn-add" onclick="" class="btn btn-primary">Add</button>
+                            <input type="number" id="schoolStart" placeholder="Start Year"><br>
+                            <input type="number" id="schoolEnd" placeholder="End Year">
+                            <button type="submit" id="school-btn-add" onclick="" class="btn btn-primary">Add</button>
                         </form>
                     </div>
                 </div>
@@ -159,8 +163,8 @@
                 <div id="orgsDiv" class="d-lg-flex flex-row justify-content-around align-content-around flex-wrap">
 
                 </div>
-                <div class="addButton"><img src="assets/img/add-org.svg" height="50px" width="50px"></div>
-                <div class="card orgs newItem">
+                <div class="addButton" id="plus-org"><img src="assets/img/add-org.svg" height="50px" width="50px"></div>
+                <div class="card orgs newItem" id="add-org-card">
                     <div class="card-header">
                         <h5>Add Organization</h5>
                     </div>
@@ -168,9 +172,9 @@
                         <form id="add-org">
                             <input type="text" id="orgName" placeholder="Name"><br>
                             <input type="text" id="position" placeholder="Position"><br>
-                            <input type="number" id="year_start" placeholder="Start Year"><br>
-                            <input type="number" id="year_end" placeholder="End Year">
-                            <button type="button" id="org-btn-add" onclick="" class="btn btn-primary">Add</button>
+                            <input type="number" id="orgStart" placeholder="Start Year"><br>
+                            <input type="number" id="orgEnd" placeholder="End Year">
+                            <button type="submit" id="org-btn-add" onclick="" class="btn btn-primary">Add</button>
                         </form>
                     </div>
                 </div>
@@ -180,9 +184,6 @@
 
     <script src="assets/js/login.js"></script>
     <script src="assets/js/add.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 </body>
 
 </html>

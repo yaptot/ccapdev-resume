@@ -10,6 +10,8 @@ function login() {
             document.getElementById('main').style.display="flex";
             document.getElementById('sidebar').style.display="flex";
             document.getElementById("login-div").style.display="none";
+
+            document.title="Resume";
         }
             
     }).catch(function (err) {

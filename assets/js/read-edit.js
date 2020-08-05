@@ -60,6 +60,8 @@ db.collection("others").get().then(function(snapshot) {
     });
 });
 
+const projList = document.querySelector("#portfolioCards")
+
 function readProject(doc) {
     let mainDiv = document.getElementById("portfolioCards");
 
@@ -125,17 +127,28 @@ function readProject(doc) {
     deleteDiv.appendChild(deleteIcon);
 }
 
-db.collection("projects").get().then(function(snapshot) {
-    snapshot.forEach(function(doc) {
-        readProject(doc);
-    });
-});
+db.collection("projects").onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        if(change.type === 'added')
+            readProject(change.doc);
+        
+        else if(change.type === 'removed') {
+            console.log(change.doc.id);
+            let proj = projList.querySelector("[data-id=" + "\'" + change.doc.id + "\'" + "]");
+            projList.removeChild(proj);
+        }
+    })
+})
+
+const educList = document.querySelector("#educCards")
 
 function readEduc(doc, i) {
     let mainDiv = document.getElementById("educCards");
 
     let row = document.createElement("div");
     row.classList.add("educRow");
+    row.setAttribute('data-id', doc.id);
 
     let card = document.createElement("div");
     card.classList.add("card");
@@ -205,15 +218,27 @@ function readEduc(doc, i) {
     deleteDiv.appendChild(deleteIcon);
 }
 
-db.collection("education").orderBy("year_start").get().then(function(snapshot) {
-    let i = 1;
-    snapshot.forEach(function(doc) {
-        readEduc(doc, i);
-        i++;
-    });
-});
+let i = 1;
+db.collection("education").orderBy("year_start").onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    
+    changes.forEach(change => {
+        if(change.type === 'added'){
+            readEduc(change.doc, i);
+            i++;
+        }
+        else if(change.type === 'removed') {
+            console.log(change.doc.id);
+            let school = educList.querySelector("[data-id=" + "\'" + change.doc.id + "\'" + "]");
+            educList.removeChild(school);
+            i--;
+        }
+    })
+})
 
-function readOrgs(doc) {
+const orgList = document.querySelector("#orgsDiv");
+
+function readOrg(doc) {
     let mainDiv = document.getElementById("orgsDiv");
 
     let card = document.createElement("div");
@@ -269,8 +294,18 @@ function readOrgs(doc) {
     deleteDiv.appendChild(deleteIcon);
 }
 
-db.collection("organizations").orderBy("year_start").get().then(function(snapshot) {
-    snapshot.forEach(function(doc) {
-        readOrgs(doc);
-    });
-});
+db.collection("organizations").onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        if(change.type === 'added')
+            readOrg(change.doc);
+        
+        else if(change.type === 'removed') {
+            console.log(change.doc.id);
+            let org = orgList.querySelector("[data-id=" + "\'" + change.doc.id + "\'" + "]");
+            orgList.removeChild(org);
+        }
+    })
+})
+
+

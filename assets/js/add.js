@@ -19,17 +19,10 @@ projForm.addEventListener('submit', (e) => {
         name: projForm.projectName.value,
         course: projForm.course.value,
         info: projForm.info.value,
-        year_start: projForm.projStart.value,
-        year_end: projForm.projEnd.value,
         link: projForm.url.value
     })
 
-    projForm.projectName.value = '';
-    projForm.info.value = '';
-    projForm.course.value = '';
-    projForm.projStart.value = '';
-    projForm.projEnd.value = '';
-    projForm.url.value = '';
+    projForm.reset();
 })
 
 const schoolForm = document.querySelector("#add-school");
@@ -44,10 +37,7 @@ schoolForm.addEventListener('submit', (e) => {
         year_end: schoolForm.schoolEnd.value
     })
 
-    schoolForm.schoolName.value = '';
-    schoolForm.degree.value = '';
-    schoolForm.schoolStart.value = '';
-    schoolForm.schoolEnd.value = '';
+    schoolForm.reset();
 })
 
 const orgForm = document.querySelector("#add-org");
@@ -62,9 +52,6 @@ orgForm.addEventListener('submit', (e) => {
         year_end: orgForm.orgEnd.value
     })
 
-    orgForm.orgName.value = '';
-    orgForm.position.value = '';
-    orgForm.orgStart.value = '';
-    orgForm.orgEnd.value = '';
+    orgForm.reset();
 })
 

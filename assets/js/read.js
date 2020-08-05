@@ -174,7 +174,7 @@ db.collection("education").orderBy("year_start").get().then(function(snapshot) {
     });
 });
 
-function readOrgs(doc) {
+function readOrg(doc) {
     let mainDiv = document.getElementById("orgsDiv");
 
     let card = document.createElement("div");
@@ -212,6 +212,6 @@ function readOrgs(doc) {
 
 db.collection("organizations").orderBy("year_start").get().then(function(snapshot) {
     snapshot.forEach(function(doc) {
-        readOrgs(doc);
+        readOrg(doc);
     });
 });

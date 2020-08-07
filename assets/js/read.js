@@ -19,12 +19,6 @@ function readProfile(doc) {
      let intro = document.createElement("p");
      intro.textContent = doc.data().value;
 
-     let birthday = document.createElement("span");
-     birthday.textContent = "Birthday: " + doc.data().birthday;
-
-     let email = document.createElement("span");
-     email.textContent = "email: " + doc.data().email;
-
      let githubAnchor = document.createElement("a");
      githubAnchor.href = doc.data().github;
 
@@ -44,8 +38,6 @@ function readProfile(doc) {
      fb.width = 40;
 
      mainDiv.appendChild(intro);
-     mainDiv.appendChild(birthday);
-     mainDiv.appendChild(email);
 
      mainDiv.appendChild(githubAnchor);
      githubAnchor.appendChild(github);

@@ -465,14 +465,14 @@ h1.right {
   padding: 10px;
 }
 
-button#saveAbout, #saveContacts{
+button#saveProfile{
   display: none;
   background-color: #0078cf;
   border: 0px;
   margin-top: 10px;
 }
 
-#saveAbout:hover, #saveContacts:hover {
+#saveProfile:hover{
   background-color: #0a588f;
 }
 

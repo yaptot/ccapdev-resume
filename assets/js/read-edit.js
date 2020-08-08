@@ -15,6 +15,13 @@ var db = firebase.firestore();
 
 function readProfile(doc) {
     let mainDiv = document.getElementById("details");
+    mainDiv.setAttribute('data-id', doc.id);
+
+    let fullName = document.createElement('h1');
+    fullName.textContent = "Rupert Myles B. Yap"
+
+    let textArea = document.createElement('textArea');
+    textArea.id = "editAbout";
 
     let intro = document.createElement("p");
     intro.textContent = doc.data().value;
@@ -47,11 +54,13 @@ function readProfile(doc) {
     fbInput.value = doc.data().facebook;
 
     let saveContact = document.createElement("button");
-    saveContact.id = "saveContacts";
+    saveContact.id = "saveProfile";
     saveContact.classList.add("btn");
     saveContact.classList.add("btn-primary");
     saveContact.innerHTML = "Save"
 
+    mainDiv.appendChild(fullName);
+    mainDiv.appendChild(textArea);
     mainDiv.appendChild(intro);
 
     mainDiv.appendChild(githubAnchor);
@@ -63,14 +72,30 @@ function readProfile(doc) {
     mainDiv.appendChild(githubInput);
     mainDiv.appendChild(fbInput);
     mainDiv.appendChild(saveContact);
+
+    saveContact.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        let id = e.currentTarget.parentNode.getAttribute('data-id');
+        db.collection('others').doc(id).update({
+            value: document.getElementById('editAbout').value,
+            github: document.getElementById('githubInput').value,
+            facebook: document.getElementById('fbInput').value
+        });
+    });
 }
 
-db.collection("others").get().then(function (snapshot) {
-    snapshot.forEach(function (doc) {
-        readProfile(doc);
-    });
-});
-
+db.collection("others").onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        if (change.type === 'added')
+            readProfile(change.doc);
+        else if (change.type === 'modified') {
+            $('#details').empty();
+            readProfile(change.doc);
+        }
+    })
+})
 const projList = document.querySelector("#portfolioCards")
 
 function readProject(doc) {

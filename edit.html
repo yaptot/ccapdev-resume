@@ -53,9 +53,6 @@
     <div class="d-lg-flex flex-column justify-content-lg-center" id="main">
         <div id="profile" class="container profile">
             <div id="details">
-                <h1>Rupert Myles B. Yap</h1>
-                <textarea id="editAbout"></textarea>
-                <button id="saveAbout" class="btn btn-primary">Save</button>
             </div>
 
             <div id="profpic">
@@ -151,9 +148,9 @@
                         <form id="add-school">
                             <input type="text" id="schoolName" placeholder="Name"><br>
                             <input type="text" id="degree" placeholder="Degree"><br>
-                            <input type="number" id="schoolStart" placeholder="Start Year"><br>
-                            <input type="number" id="schoolEnd" placeholder="End Year">
-                            <button type="submit" id="school-btn-add" onclick="" class="btn btn-primary">Add</button>
+                            <input type="number" id="schoolStart" placeholder="Start Year" min="1"><br>
+                            <input type="number" id="schoolEnd" placeholder="End Year" min="1">
+                            <button type="submit" id="school-btn-add" class="btn btn-primary">Add</button>
                         </form>
                     </div>
                 </div>
@@ -174,9 +171,9 @@
                         <form id="add-org">
                             <input type="text" id="orgName" placeholder="Name"><br>
                             <input type="text" id="position" placeholder="Position"><br>
-                            <input type="number" id="orgStart" placeholder="Start Year"><br>
-                            <input type="number" id="orgEnd" placeholder="End Year">
-                            <button type="submit" id="org-btn-add" onclick="" class="btn btn-primary">Add</button>
+                            <input type="number" id="orgStart" placeholder="Start Year" min="1"><br>
+                            <input type="number" id="orgEnd" placeholder="End Year" min="1">
+                            <button type="submit" id="org-btn-add" class="btn btn-primary">Add</button>
                         </form>
                     </div>
                 </div>
